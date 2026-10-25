@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
+  
+  --color-vetra-orange: #FF5B26;
+  --color-vetra-orange-hover: #EA4B18;
+  --color-vetra-orange-light: #FFEDE6;
+  --color-vetra-dark-bg: #07080B;
+  --color-vetra-dark-surface: #0E1015;
+  --color-vetra-dark-border: #1C1F28;
+  --color-vetra-light-bg: #FAF9F6;
+  --color-vetra-light-surface: #FFFFFF;
+  --color-vetra-light-border: #E8E6DF;
+
+  --color-notion-bg: #FFFFFF;
+  --color-notion-surface: #F7F6F3;
+  --color-notion-sidebar: #FBFBFA;
+  --color-notion-ink: #37352F;
+  --color-notion-muted: #787774;
+  --color-notion-border: #E9E9E7;
+  --color-notion-hover: #EFEFED;
+  --color-notion-blue: #2383E2;
+  --color-notion-blue-hover: #0B6FCC;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: #18181B;
+    background-color: #FAF9F6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .dark body {
+    color: #EDEDED;
+    background-color: #07080B;
+  }
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Notion-style subtle focus ring */
+:focus-visible {
+  outline: 2px solid #2383E2 !important;
+  outline-offset: 1px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles for printable summary / invitations */
+@media print {
+  nav, aside, button, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: #111111 !important;
+  }
+}

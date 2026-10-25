@@ -1,0 +1,6 @@
+{
+  "name": "Gatherly - AI Event Planner",
+  "description": "Production-grade GenAI event planning app for weddings, birthdays, and community celebrations with intelligent budgeting, timeline management, vendors search, and interactive assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
