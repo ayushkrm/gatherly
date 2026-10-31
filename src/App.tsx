@@ -21,9 +21,19 @@ import { PlanBModal } from './features/planb/PlanBModal';
 import { PrintableSummary } from './components/PrintableSummary';
 
 export default function App() {
-  const { hasPlan, activeTab, darkMode, generationStep, setActiveTab } = usePlanStore();
+  const { hasPlan, activeTab, darkMode, generationStep, setActiveTab, resetAll } = usePlanStore();
   const [isPlanBOpen, setIsPlanBOpen] = useState(false);
   const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
+
+  const handleHomeNavigation = () => {
+    if (!hasPlan) return true;
+    if (!window.confirm('Return to the home page? Your current event plan will be cleared.')) {
+      return false;
+    }
+
+    resetAll();
+    return true;
+  };
 
   // Sync dark mode class with HTML element
   useEffect(() => {
@@ -35,14 +45,17 @@ export default function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F6] dark:bg-[#07080B] text-[#18181B] dark:text-[#EDEDED] transition-colors">
+    <div className="min-h-screen flex flex-col bg-[#F7F5F0] dark:bg-[#07080B] text-[#18181B] dark:text-[#EDEDED] transition-colors">
       {/* Screen-reader Live Announcer for Async States */}
       <div aria-live="polite" aria-atomic="true" className="sr-only">
         {generationStep}
       </div>
 
       {/* Main Navbar */}
-      <Navbar onOpenPrintModal={() => setIsPrintModalOpen(true)} />
+      <Navbar
+        onOpenPrintModal={() => setIsPrintModalOpen(true)}
+        onNavigateHome={handleHomeNavigation}
+      />
 
       {/* Main Body with Dashboard Sidebar on larger screens */}
       <div className="flex-1 flex w-full">
@@ -50,6 +63,7 @@ export default function App() {
           <DashboardSidebar
             onOpenPlanB={() => setIsPlanBOpen(true)}
             onOpenPrintModal={() => setIsPrintModalOpen(true)}
+            onNavigateHome={handleHomeNavigation}
           />
         )}
 
@@ -77,7 +91,7 @@ export default function App() {
         <footer className="bg-[#F7F6F3] dark:bg-[#191919] border-t border-[#E9E9E7] dark:border-[#2E2E2E] py-8 px-4 sm:px-8 no-print transition-colors">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Logo with clear space equal to half icon width (size 40 / 2 = 20px) */}
-          <div style={{ padding: '20px' }}>
+          <div>
             <Logo
               size={40}
               theme={darkMode ? 'dark' : 'light'}
@@ -85,7 +99,7 @@ export default function App() {
               href="/"
               onClick={(e: React.MouseEvent) => {
                 e.preventDefault();
-                if (hasPlan) setActiveTab('overview');
+                handleHomeNavigation();
               }}
             />
           </div>

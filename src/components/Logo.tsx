@@ -115,7 +115,7 @@ export const Logo: React.FC<LogoProps> = ({
       <span
         className={`font-serif font-[800] leading-none ${textColorClass}`}
         style={{
-          fontFamily: "'Fraunces', Georgia, serif",
+          fontFamily: "'DM Sans', 'Instrument Sans', sans-serif",
           fontWeight: 800,
           letterSpacing: '-0.02em',
           fontSize: `${fontSize}px`,

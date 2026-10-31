@@ -3,16 +3,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-serif: 'Fraunces', Georgia, serif;
+  --font-serif: 'DM Sans', 'Instrument Sans', sans-serif;
   --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
   
-  --color-vetra-orange: #FF5B26;
-  --color-vetra-orange-hover: #EA4B18;
-  --color-vetra-orange-light: #FFEDE6;
+  --color-vetra-orange: #FFD84D;
+  --color-vetra-orange-hover: #F2C62D;
+  --color-vetra-orange-light: #FFF4C8;
   --color-vetra-dark-bg: #07080B;
   --color-vetra-dark-surface: #0E1015;
   --color-vetra-dark-border: #1C1F28;
-  --color-vetra-light-bg: #FAF9F6;
+  --color-vetra-light-bg: #FFFDF7;
   --color-vetra-light-surface: #FFFFFF;
   --color-vetra-light-border: #E8E6DF;
 
@@ -23,15 +23,13 @@
   --color-notion-muted: #787774;
   --color-notion-border: #E9E9E7;
   --color-notion-hover: #EFEFED;
-  --color-notion-blue: #2383E2;
-  --color-notion-blue-hover: #0B6FCC;
 }
 
 @layer base {
   body {
     font-family: var(--font-sans);
-    color: #18181B;
-    background-color: #FAF9F6;
+    color: #26231F;
+    background-color: #FFFDF7;
     -webkit-font-smoothing: antialiased;
   }
   .dark body {
@@ -40,14 +38,133 @@
   }
   h1, h2, h3, .font-serif {
     font-family: var(--font-serif);
-    letter-spacing: -0.015em;
+    font-weight: 800;
+    letter-spacing: -0.055em;
+  }
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+  input, select, textarea {
+    transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
   }
 }
 
-/* Notion-style subtle focus ring */
+.font-handwritten {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.paper-card {
+  border: 2px solid #26231F !important;
+  border-radius: 18px !important;
+  box-shadow: 4px 4px 0 #26231F !important;
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.paper-card:hover {
+  box-shadow: 6px 6px 0 #26231F !important;
+  transform: translate(-1px, -1px);
+}
+
+.playful-cta {
+  border: 2px solid #26231F !important;
+  border-radius: 14px !important;
+  background: #FFD84D !important;
+  box-shadow: 4px 4px 0 #26231F !important;
+  color: #26231F !important;
+  font-weight: 800 !important;
+  transition: transform 140ms ease, box-shadow 140ms ease, background-color 140ms ease;
+}
+
+.playful-cta:hover {
+  background: #FFE477 !important;
+  box-shadow: 6px 6px 0 #26231F !important;
+  transform: translate(-1px, -1px);
+}
+
+.playful-cta:active {
+  box-shadow: 1px 1px 0 #26231F !important;
+  transform: translate(3px, 3px);
+}
+
+:is(button, a)[class~="bg-[#FF5B26]"] {
+  background-color: #FFD84D !important;
+  border: 2px solid #26231F !important;
+  border-radius: 12px !important;
+  box-shadow: 3px 3px 0 #26231F !important;
+  color: #26231F !important;
+  font-weight: 700 !important;
+}
+
+:is(button, a)[class~="bg-[#FF5B26]"]:hover {
+  background-color: #FFE477 !important;
+  box-shadow: 5px 5px 0 #26231F !important;
+  transform: translate(-1px, -1px);
+}
+
+[class~="text-[#FF5B26]"] {
+  color: #7654A8 !important;
+}
+
+[class~="border-[#FF5B26]"] {
+  border-color: #7654A8 !important;
+}
+
+[class*="bg-[#FF5B26]/"] {
+  background-color: #F4EFFF !important;
+}
+
+[class~="bg-[#FF5B26]"]:not(button):not(a) {
+  background-color: #E9E1F7 !important;
+  color: #4A3C62 !important;
+}
+
+[class*="rounded-lg"][class*="border-[#E9E9E7]"],
+[class*="rounded-3xl"][class*="border-black/10"] {
+  border-color: #26231F !important;
+  border-width: 2px !important;
+  box-shadow: 4px 4px 0 #26231F;
+}
+
+.dark .paper-card {
+  border-color: #F4EFE2 !important;
+  box-shadow: 4px 4px 0 #F4EFE2 !important;
+}
+
+.dark [class~="text-[#FF5B26]"] {
+  color: #C6B3EB !important;
+}
+
+.dark [class~="border-[#FF5B26]"] {
+  border-color: #C6B3EB !important;
+}
+
+.dark [class*="bg-[#FF5B26]/"] {
+  background-color: #403550 !important;
+}
+
+.dark [class~="bg-[#FF5B26]"]:not(button):not(a) {
+  background-color: #403550 !important;
+  color: #EFE7FF !important;
+}
+
 :focus-visible {
-  outline: 2px solid #2383E2 !important;
-  outline-offset: 1px !important;
+  outline: 3px solid #7654A8 !important;
+  outline-offset: 3px !important;
+}
+
+::selection {
+  color: #26231F;
+  background: #FFD84D;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dark {
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {

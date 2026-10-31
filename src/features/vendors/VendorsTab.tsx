@@ -157,7 +157,7 @@ export const VendorsTab: React.FC = () => {
                         setEditingVendorNameCat(vendor.category);
                         setVendorNameInput(vendor.bookedVendorName || '');
                       }}
-                      className="text-[#2383E2] text-[11px] hover:underline font-medium"
+                      className="text-[#FF5B26] text-[11px] hover:underline font-medium"
                     >
                       Edit
                     </button>
@@ -183,7 +183,7 @@ export const VendorsTab: React.FC = () => {
                           toggleVendorBooked(vendor.category, true, vendorNameInput.trim() || 'Selected Vendor');
                           setEditingVendorNameCat(null);
                         }}
-                        className="px-2.5 py-1 rounded bg-[#2383E2] text-white font-medium text-xs hover:bg-[#0B6FCC]"
+                        className="px-2.5 py-1 rounded bg-[#FF5B26] text-white font-medium text-xs hover:bg-[#EA4B18]"
                       >
                         Save
                       </button>
@@ -200,7 +200,7 @@ export const VendorsTab: React.FC = () => {
                 {/* Checklist Section */}
                 <div className="space-y-1.5">
                   <h4 className="text-[11px] font-semibold text-[#787774] uppercase tracking-wider flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3 h-3 text-[#2383E2]" />
+                    <CheckCircle2 className="w-3 h-3 text-[#FF5B26]" />
                     <span>Diligence Checklist</span>
                   </h4>
                   <ul className="space-y-1 text-xs text-[#37352F] dark:text-[#D4D4D4]">
@@ -238,7 +238,7 @@ export const VendorsTab: React.FC = () => {
                   onClick={() => handleFindRealOptions(vendor.category)}
                   className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-md bg-[#F7F6F3] dark:bg-[#252525] hover:bg-[#EFEFED] dark:hover:bg-[#2C2C2C] text-[#37352F] dark:text-[#D4D4D4] font-medium text-xs border border-[#E9E9E7] dark:border-[#2E2E2E] transition-colors"
                 >
-                  <Search className="w-3.5 h-3.5 text-[#2383E2]" />
+                  <Search className="w-3.5 h-3.5 text-[#FF5B26]" />
                   <span>Find Real Options in {onboarding.city}</span>
                 </button>
               </div>
@@ -254,7 +254,7 @@ export const VendorsTab: React.FC = () => {
             <div className="flex items-start justify-between gap-3 border-b border-[#E9E9E7] dark:border-[#2E2E2E] pb-3">
               <div>
                 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium bg-[#D3E5EF] dark:bg-[#21374A] text-[#183347] dark:text-[#85B7DC] mb-1">
-                  <Sparkles className="w-3 h-3 text-[#2383E2]" />
+                  <Sparkles className="w-3 h-3 text-[#FF5B26]" />
                   <span>Google Search Grounding</span>
                 </div>
                 <h3 className="text-lg font-serif font-bold text-[#37352F] dark:text-[#D4D4D4]">
@@ -272,7 +272,7 @@ export const VendorsTab: React.FC = () => {
 
             {isSearching && (
               <div className="py-10 text-center space-y-2.5">
-                <div className="w-8 h-8 rounded-full border-2 border-[#E9E9E7] border-t-[#2383E2] animate-spin mx-auto" />
+                <div className="w-8 h-8 rounded-full border-2 border-[#E9E9E7] border-t-[#FF5B26] animate-spin mx-auto" />
                 <p className="text-xs text-[#787774]">
                   Searching Google for verified {activeCategoryModal} in {onboarding.city}...
                 </p>
@@ -304,10 +304,10 @@ export const VendorsTab: React.FC = () => {
                           href={src.uri}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-between p-2 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] hover:border-[#2383E2] transition-colors text-xs text-[#37352F] dark:text-[#D4D4D4] group bg-[#FFFFFF] dark:bg-[#191919]"
+                          className="flex items-center justify-between p-2 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] hover:border-[#FF5B26] transition-colors text-xs text-[#37352F] dark:text-[#D4D4D4] group bg-[#FFFFFF] dark:bg-[#191919]"
                         >
                           <span className="truncate pr-1.5 font-medium">{src.title}</span>
-                          <ExternalLink className="w-3 h-3 text-[#787774] group-hover:text-[#2383E2] shrink-0" />
+                          <ExternalLink className="w-3 h-3 text-[#787774] group-hover:text-[#FF5B26] shrink-0" />
                         </a>
                       ))}
                     </div>

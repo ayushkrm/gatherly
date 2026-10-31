@@ -185,7 +185,7 @@ export const GuestsTab: React.FC = () => {
           {/* Add Guest Button */}
           <button
             onClick={() => setIsAddModalOpen(true)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white text-xs font-medium transition-colors shadow-2xs active:scale-98"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white text-xs font-medium transition-colors shadow-2xs active:scale-98"
           >
             <UserPlus className="w-3.5 h-3.5" />
             <span>Add Guest</span>
@@ -237,7 +237,7 @@ export const GuestsTab: React.FC = () => {
 
           <div className="p-3.5 rounded-md bg-[#F7F6F3] dark:bg-[#252525] border border-[#E9E9E7] dark:border-[#2E2E2E]">
             <span className="text-[11px] text-[#787774] block">Actual Spend / Head</span>
-            <span className="text-xl font-bold font-serif text-[#2383E2]">
+            <span className="text-xl font-bold font-serif text-[#FF5B26]">
               {formatCurrency(actualPerHead, onboarding.currency)}
             </span>
             <span className="text-[10px] text-[#787774] mt-0.5 block">
@@ -289,7 +289,7 @@ export const GuestsTab: React.FC = () => {
             <p className="text-xs text-[#787774]">No guests added yet.</p>
             <button
               onClick={() => setIsAddModalOpen(true)}
-              className="text-xs text-[#2383E2] font-medium hover:underline"
+              className="text-xs text-[#FF5B26] font-medium hover:underline"
             >
               Add your first guest or import a CSV
             </button>
@@ -410,7 +410,7 @@ export const GuestsTab: React.FC = () => {
                   placeholder="e.g. Maya Krishnan"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-3 py-2 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs sm:text-sm text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+                  className="w-full px-3 py-2 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs sm:text-sm text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
                 />
               </div>
 
@@ -424,7 +424,7 @@ export const GuestsTab: React.FC = () => {
                     placeholder="maya@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
                   />
                 </div>
                 <div>
@@ -436,7 +436,7 @@ export const GuestsTab: React.FC = () => {
                     placeholder="+1 555-0192"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
                   />
                 </div>
               </div>
@@ -449,7 +449,7 @@ export const GuestsTab: React.FC = () => {
                   <select
                     value={rsvp}
                     onChange={(e) => setRsvp(e.target.value as GuestRsvpStatus)}
-                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
                   >
                     <option value="pending">Pending</option>
                     <option value="attending">Attending</option>
@@ -465,7 +465,7 @@ export const GuestsTab: React.FC = () => {
                     placeholder="e.g. Friends"
                     value={group}
                     onChange={(e) => setGroup(e.target.value)}
-                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
                   />
                 </div>
               </div>
@@ -479,7 +479,7 @@ export const GuestsTab: React.FC = () => {
                   placeholder="e.g. Vegan, Nut-Free, Jain"
                   value={dietaryInput}
                   onChange={(e) => setDietaryInput(e.target.value)}
-                  className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+                  className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
                 />
               </div>
 
@@ -489,7 +489,7 @@ export const GuestsTab: React.FC = () => {
                   id="plusOne"
                   checked={plusOne}
                   onChange={(e) => setPlusOne(e.target.checked)}
-                  className="w-3.5 h-3.5 rounded border-[#E9E9E7] text-[#2383E2] focus:ring-[#2383E2]"
+                  className="w-3.5 h-3.5 rounded border-[#E9E9E7] text-[#FF5B26] focus:ring-[#FF5B26]"
                 />
                 <label htmlFor="plusOne" className="text-xs text-[#37352F] dark:text-[#D4D4D4]">
                   Allow / Include +1 Guest Seat
@@ -506,7 +506,7 @@ export const GuestsTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white text-xs font-medium transition-colors shadow-2xs"
+                  className="px-4 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white text-xs font-medium transition-colors shadow-2xs"
                 >
                   Save Guest
                 </button>
@@ -539,7 +539,7 @@ export const GuestsTab: React.FC = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleDownloadSampleCsv}
-                className="text-xs text-[#2383E2] font-medium hover:underline inline-flex items-center gap-1"
+                className="text-xs text-[#FF5B26] font-medium hover:underline inline-flex items-center gap-1"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Download Sample CSV Template</span>
@@ -600,7 +600,7 @@ export const GuestsTab: React.FC = () => {
                 type="button"
                 disabled={csvPreview.length === 0}
                 onClick={handleConfirmCsvImport}
-                className="px-4 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white font-medium text-xs disabled:opacity-40 shadow-2xs"
+                className="px-4 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white font-medium text-xs disabled:opacity-40 shadow-2xs"
               >
                 Import {csvPreview.length > 0 ? `${csvPreview.length} Guests` : ''}
               </button>

@@ -61,7 +61,7 @@ describe('Budget Math & Summary Calculations', () => {
   });
 
   it('formats various currencies properly', () => {
-    expect(formatCurrency(1500000, 'INR')).toBe('₹1,500,000');
+    expect(formatCurrency(1500000, 'INR')).toBe('₹15,00,000');
     expect(formatCurrency(2500, 'USD')).toBe('$2,500');
     expect(formatCurrency(3000, 'EUR')).toBe('€3,000');
     expect(formatCurrency(1200, 'GBP')).toBe('£1,200');

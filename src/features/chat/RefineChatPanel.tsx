@@ -227,7 +227,7 @@ export const RefineChatPanel: React.FC = () => {
             <div
               className={`max-w-[88%] rounded-md p-3 text-xs leading-relaxed ${
                 msg.role === 'user'
-                  ? 'bg-[#2383E2] text-white font-medium'
+                  ? 'bg-[#FF5B26] text-white font-medium'
                   : msg.role === 'system'
                   ? 'bg-[#FFE2DD] dark:bg-[#4D2322] text-[#49201C] dark:text-[#F3958F] border border-[#F3958F]'
                   : 'bg-[#F7F6F3] dark:bg-[#252525] text-[#37352F] dark:text-[#D4D4D4] border border-[#E9E9E7] dark:border-[#2E2E2E]'
@@ -249,7 +249,7 @@ export const RefineChatPanel: React.FC = () => {
 
         {isSending && (
           <div className="flex items-center gap-2 text-[#787774] text-xs italic p-1">
-            <div className="w-3.5 h-3.5 border-2 border-[#2383E2] border-t-transparent rounded-full animate-spin" />
+            <div className="w-3.5 h-3.5 border-2 border-[#FF5B26] border-t-transparent rounded-full animate-spin" />
             <span>Assistant is evaluating function calling tools...</span>
           </div>
         )}
@@ -290,12 +290,12 @@ export const RefineChatPanel: React.FC = () => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             disabled={isSending}
-            className="flex-1 px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+            className="flex-1 px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
           />
           <button
             type="submit"
             disabled={!input.trim() || isSending}
-            className="p-2 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white disabled:opacity-40 transition-colors shadow-2xs"
+            className="p-2 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white disabled:opacity-40 transition-colors shadow-2xs"
             aria-label="Send message"
           >
             <Send className="w-3.5 h-3.5" />

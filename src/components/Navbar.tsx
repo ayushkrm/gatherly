@@ -24,9 +24,10 @@ import { Logo, LogoMark } from './Logo';
 interface NavbarProps {
   onOpenPrintModal: () => void;
   onOpenSidebar?: () => void;
+  onNavigateHome: () => boolean;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal, onNavigateHome }) => {
   const {
     hasPlan,
     plan,
@@ -84,15 +85,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
-  const handleLandingNav = (e: React.MouseEvent) => {
+  const handleLandingNav = (e: React.MouseEvent): boolean => {
     e.preventDefault();
-    if (hasPlan) {
-      setActiveTab('overview');
-    }
+    return onNavigateHome();
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#FAF9F6]/90 dark:bg-[#07080B]/90 backdrop-blur-md border-b border-[#E8E6DF] dark:border-white/5 transition-colors">
+    <header className="sticky top-0 z-40 border-b-2 border-[#26231F] bg-[#FFFDF7]/95 backdrop-blur-md transition-colors dark:border-white/10 dark:bg-[#07080B]/95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo & Breadcrumbs */}
@@ -119,10 +118,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
           {!hasPlan && (
             <nav className="hidden md:flex items-center gap-7 text-xs sm:text-[13px] font-medium text-[#71717A] dark:text-[#A1A1AA]">
               <a
-                href="#usecases"
+                href="#planner"
                 className="hover:text-[#18181B] dark:hover:text-white transition-colors flex items-center gap-1"
               >
-                <span>Use cases</span>
+                <span>Planner</span>
                 <span className="text-[10px] opacity-70">▾</span>
               </a>
               <a
@@ -152,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
             {/* Demo Button */}
             <button
               onClick={loadDemoPlan}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-black/5 dark:bg-white/10 text-[#18181B] dark:text-[#FAFAFA] border border-black/10 dark:border-white/10 hover:bg-black/10 dark:hover:bg-white/15 transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-xl border-2 border-[#26231F] bg-white px-3 py-1.5 text-xs font-bold text-[#26231F] shadow-[2px_2px_0_#26231F] transition-all hover:-translate-y-0.5 hover:shadow-[4px_4px_0_#26231F] dark:bg-[#202020] dark:text-white"
               title="Load sample plan (Jaipur Wedding)"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF5B26]" />
@@ -163,7 +162,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
             {!hasPlan && (
               <a
                 href="#planner"
-                className="hidden sm:inline-flex items-center justify-center px-4.5 py-1.5 rounded-full bg-[#FF5B26] hover:bg-[#EA4B18] text-white text-xs font-semibold shadow-md shadow-orange-500/20 active:scale-98 transition-all cursor-pointer whitespace-nowrap"
+                className="playful-cta hidden items-center justify-center whitespace-nowrap px-4.5 py-1.5 text-xs sm:inline-flex"
               >
                 Get started
               </a>
@@ -278,7 +277,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
         {/* Desktop Dashboard Tabs Bar (when plan exists) */}
         {hasPlan && (
           <nav
-            className="flex space-x-1 overflow-x-auto py-1 border-t border-[#E9E9E7] dark:border-[#2E2E2E] no-scrollbar"
+            className="hidden md:flex lg:hidden space-x-1 overflow-x-auto py-1 border-t border-[#E9E9E7] dark:border-[#2E2E2E] no-scrollbar"
             aria-label="Dashboard Tabs"
           >
             {tabs.map((tab) => {
@@ -325,8 +324,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
                     asLink
                     href="/"
                     onClick={(e: React.MouseEvent) => {
-                      handleLandingNav(e);
-                      setMobileMenuOpen(false);
+                      if (handleLandingNav(e)) setMobileMenuOpen(false);
                     }}
                     aria-label="Gatherly home"
                   />
@@ -367,7 +365,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPrintModal }) => {
                           : 'text-[#37352F] dark:text-[#D4D4D4] hover:bg-[#EFEFED] dark:hover:bg-[#2C2C2C]'
                       }`}
                     >
-                      <span className={active ? 'text-[#2383E2]' : 'text-[#787774]'}>
+                      <span className={active ? 'text-[#FF5B26]' : 'text-[#787774]'}>
                         {tab.icon}
                       </span>
                       <span>{tab.label}</span>

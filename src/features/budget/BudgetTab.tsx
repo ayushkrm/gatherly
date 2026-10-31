@@ -17,7 +17,7 @@ import { BudgetHistory } from './BudgetHistory';
 
 // Notion-style refined palette for donut chart
 const NOTION_DONUT_PALETTE = [
-  '#2383E2', // Notion Blue
+  '#FF5B26', // Notion Blue
   '#E89A3C', // Warm Orange
   '#4DAB9A', // Sage / Green
   '#9065B0', // Purple
@@ -165,7 +165,7 @@ export const BudgetTab: React.FC = () => {
         <button
           onClick={handleRebalanceWithAi}
           disabled={isRebalancing}
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white font-medium text-xs sm:text-sm shadow-2xs transition-colors disabled:opacity-50 active:scale-98"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white font-medium text-xs sm:text-sm shadow-2xs transition-colors disabled:opacity-50 active:scale-98"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${isRebalancing ? 'animate-spin' : ''}`} />
           <span>{isRebalancing ? 'Rebalancing...' : 'Rebalance Budget'}</span>
@@ -192,7 +192,7 @@ export const BudgetTab: React.FC = () => {
       {/* Rebalance Toast (Notion Green Pastel) */}
       {rebalanceMessage && (
         <div className="p-3 rounded-md bg-[#DBEDDB] dark:bg-[#243D30] border border-[#86C19F] dark:border-[#335643] text-[#1C3829] dark:text-[#86C19F] text-xs flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-[#2383E2] shrink-0" />
+          <Sparkles className="w-4 h-4 text-[#FF5B26] shrink-0" />
           <span>{rebalanceMessage}</span>
         </div>
       )}
@@ -231,7 +231,7 @@ export const BudgetTab: React.FC = () => {
               : 'text-[#787774] hover:text-[#37352F] hover:bg-[#F7F6F3] dark:hover:bg-[#252525]'
           }`}
         >
-          <History className="w-3.5 h-3.5 text-[#2383E2]" />
+          <History className="w-3.5 h-3.5 text-[#FF5B26]" />
           <span>Budget History</span>
           <span className="ml-1 px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-[#E3E2E0] dark:bg-[#333333] text-[#37352F] dark:text-[#D4D4D4]">
             {budgetHistory.length}
@@ -354,7 +354,7 @@ export const BudgetTab: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-[#787774]">Actual Spend per Head:</span>
-                  <div className="text-sm font-bold text-[#2383E2] font-mono">
+                  <div className="text-sm font-bold text-[#FF5B26] font-mono">
                     {formatCurrency(actualPerGuest, onboarding.currency)}
                   </div>
                 </div>
@@ -389,7 +389,7 @@ export const BudgetTab: React.FC = () => {
                         ? 'bg-[#FADEC9] text-[#49290E] font-semibold'
                         : p === 'nice'
                         ? 'bg-[#DBEDDB] text-[#1C3829] font-semibold'
-                        : 'bg-[#2383E2] text-white font-semibold'
+                        : 'bg-[#FF5B26] text-white font-semibold'
                       : 'bg-[#F7F6F3] dark:bg-[#2A2A2A] text-[#787774] hover:bg-[#EFEFED]'
                   }`}
                 >
@@ -467,12 +467,12 @@ export const BudgetTab: React.FC = () => {
                             type="number"
                             value={tempActualValue}
                             onChange={(e) => setTempActualValue(parseFloat(e.target.value) || 0)}
-                            className="w-24 px-2 py-0.5 rounded border border-[#2383E2] bg-[#FFFFFF] dark:bg-[#191919] text-xs font-mono text-right focus:outline-hidden"
+                            className="w-24 px-2 py-0.5 rounded border border-[#FF5B26] bg-[#FFFFFF] dark:bg-[#191919] text-xs font-mono text-right focus:outline-hidden"
                             autoFocus
                           />
                           <button
                             onClick={() => handleSaveActual(item.category)}
-                            className="p-1 rounded bg-[#2383E2] text-white hover:bg-[#0B6FCC]"
+                            className="p-1 rounded bg-[#FF5B26] text-white hover:bg-[#EA4B18]"
                             title="Save"
                           >
                             <Check className="w-3 h-3" />
@@ -484,7 +484,7 @@ export const BudgetTab: React.FC = () => {
                             setEditingActualCategory(item.category);
                             setTempActualValue(actual);
                           }}
-                          className="group inline-flex items-center gap-1 font-mono font-medium text-[#37352F] dark:text-[#D4D4D4] hover:text-[#2383E2]"
+                          className="group inline-flex items-center gap-1 font-mono font-medium text-[#37352F] dark:text-[#D4D4D4] hover:text-[#FF5B26]"
                           title="Click to edit actual spend"
                         >
                           <span>{formatCurrency(actual, onboarding.currency)}</span>

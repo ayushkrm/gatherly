@@ -119,7 +119,8 @@ export function formatCurrency(amount: number, currencyCode: string = 'USD'): st
   };
 
   const symbol = symbolMap[currencyCode.toUpperCase()] || `${currencyCode} `;
-  return `${symbol}${safeAmount.toLocaleString()}`;
+  const locale = currencyCode.toUpperCase() === 'INR' ? 'en-IN' : 'en-US';
+  return `${symbol}${new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(safeAmount)}`;
 }
 
 /**

@@ -56,7 +56,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
         {/* Metric 1: Budget Health */}
         <div
           onClick={() => setActiveTab('budget')}
-          className="bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-4 hover:bg-[#F7F6F3] dark:hover:bg-[#252525] transition-colors cursor-pointer group shadow-2xs"
+          className="paper-card bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-4 hover:bg-[#F7F6F3] dark:hover:bg-[#252525] transition-colors cursor-pointer group shadow-2xs"
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-semibold text-[#787774] uppercase tracking-wider">
@@ -69,7 +69,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
           </div>
           <div className="text-xs text-[#787774] mt-1 flex items-center justify-between">
             <span>Limit: {formatCurrency(onboarding.totalBudget, onboarding.currency)}</span>
-            <span className="text-[#2383E2] font-medium group-hover:translate-x-0.5 transition-transform flex items-center">
+            <span className="text-[#FF5B26] font-medium group-hover:translate-x-0.5 transition-transform flex items-center">
               View <ArrowRight className="w-3 h-3 ml-0.5" />
             </span>
           </div>
@@ -83,7 +83,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
         {/* Metric 2: Timeline Milestones */}
         <div
           onClick={() => setActiveTab('timeline')}
-          className="bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-4 hover:bg-[#F7F6F3] dark:hover:bg-[#252525] transition-colors cursor-pointer group shadow-2xs"
+          className="paper-card bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-4 hover:bg-[#F7F6F3] dark:hover:bg-[#252525] transition-colors cursor-pointer group shadow-2xs"
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-semibold text-[#787774] uppercase tracking-wider">
@@ -97,7 +97,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
           <div className="text-xs text-[#787774] mt-1 truncate">
             Next: {nextTask ? nextTask.task : 'All tasks completed'}
           </div>
-          <div className="mt-2 text-[11px] text-[#2383E2] font-medium flex items-center group-hover:translate-x-0.5 transition-transform">
+          <div className="mt-2 text-[11px] text-[#FF5B26] font-medium flex items-center group-hover:translate-x-0.5 transition-transform">
             Schedule <ArrowRight className="w-3 h-3 ml-0.5" />
           </div>
         </div>
@@ -105,7 +105,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
         {/* Metric 3: Vendors Diligence */}
         <div
           onClick={() => setActiveTab('vendors')}
-          className="bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-4 hover:bg-[#F7F6F3] dark:hover:bg-[#252525] transition-colors cursor-pointer group shadow-2xs"
+          className="paper-card bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-4 hover:bg-[#F7F6F3] dark:hover:bg-[#252525] transition-colors cursor-pointer group shadow-2xs"
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-semibold text-[#787774] uppercase tracking-wider">
@@ -119,7 +119,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
           <div className="text-xs text-[#787774] mt-1">
             {totalVendors - bookedVendors} categories remaining
           </div>
-          <div className="mt-2 text-[11px] text-[#2383E2] font-medium flex items-center group-hover:translate-x-0.5 transition-transform">
+          <div className="mt-2 text-[11px] text-[#FF5B26] font-medium flex items-center group-hover:translate-x-0.5 transition-transform">
             Directory <ArrowRight className="w-3 h-3 ml-0.5" />
           </div>
         </div>
@@ -127,7 +127,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
         {/* Metric 4: Headcount & Per-Head Cost */}
         <div
           onClick={() => setActiveTab('guests')}
-          className="bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-4 hover:bg-[#F7F6F3] dark:hover:bg-[#252525] transition-colors cursor-pointer group shadow-2xs"
+          className="paper-card bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-4 hover:bg-[#F7F6F3] dark:hover:bg-[#252525] transition-colors cursor-pointer group shadow-2xs"
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-[10px] font-semibold text-[#787774] uppercase tracking-wider">
@@ -141,7 +141,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
           <div className="text-xs text-[#787774] mt-1">
             ~{formatCurrency(perHeadSpend, onboarding.currency)} / guest
           </div>
-          <div className="mt-2 text-[11px] text-[#2383E2] font-medium flex items-center group-hover:translate-x-0.5 transition-transform">
+          <div className="mt-2 text-[11px] text-[#FF5B26] font-medium flex items-center group-hover:translate-x-0.5 transition-transform">
             RSVPs <ArrowRight className="w-3 h-3 ml-0.5" />
           </div>
         </div>
@@ -217,7 +217,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
                   key={i}
                   className="flex items-start gap-2 p-2.5 rounded-md bg-[#F7F6F3] dark:bg-[#252525] border border-[#E9E9E7] dark:border-[#2E2E2E] text-xs text-[#37352F] dark:text-[#D4D4D4]"
                 >
-                  <span className="text-[#2383E2] mt-0.5">•</span>
+                  <span className="text-[#FF5B26] mt-0.5">•</span>
                   <span>{tip}</span>
                 </div>
               ))}
@@ -244,7 +244,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ onOpenPlanB }) => {
 
           <button
             onClick={onOpenPlanB}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white font-medium text-xs sm:text-sm transition-colors shadow-2xs active:scale-98 self-start sm:self-auto"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white font-medium text-xs sm:text-sm transition-colors shadow-2xs active:scale-98 self-start sm:self-auto"
           >
             <ShieldAlert className="w-3.5 h-3.5" />
             <span>Generate Plan B Contingencies</span>

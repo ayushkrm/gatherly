@@ -19,11 +19,13 @@ import { Logo, LogoMark } from './Logo';
 interface DashboardSidebarProps {
   onOpenPlanB?: () => void;
   onOpenPrintModal?: () => void;
+  onNavigateHome: () => boolean;
 }
 
 export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
   onOpenPlanB,
   onOpenPrintModal,
+  onNavigateHome,
 }) => {
   const { activeTab, setActiveTab, plan, isChatOpen, setIsChatOpen, darkMode } = usePlanStore();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -80,7 +82,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
               href="/"
               onClick={(e: React.MouseEvent) => {
                 e.preventDefault();
-                setActiveTab('overview');
+                onNavigateHome();
               }}
             />
           ) : (
@@ -91,7 +93,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
               href="/"
               onClick={(e: React.MouseEvent) => {
                 e.preventDefault();
-                setActiveTab('overview');
+                onNavigateHome();
               }}
               aria-label="Gatherly home"
             />
@@ -204,7 +206,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
             isExpanded ? 'px-2.5 py-1.5 gap-2.5' : 'p-2 justify-center'
           } ${
             isChatOpen
-              ? 'bg-[#2383E2] text-white font-semibold'
+              ? 'bg-[#FF5B26] text-white font-semibold'
               : 'text-[#37352F] dark:text-[#D4D4D4] hover:bg-[#EFEFED] dark:hover:bg-[#2C2C2C]'
           }`}
           title="Assistant"

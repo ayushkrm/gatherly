@@ -117,7 +117,7 @@ export const TimelineTab: React.FC = () => {
 
           <button
             onClick={handleExportIcs}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white text-xs font-medium transition-colors shadow-2xs active:scale-98"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white text-xs font-medium transition-colors shadow-2xs active:scale-98"
             title="Download iCalendar (.ics) file"
           >
             <Download className="w-3.5 h-3.5" />
@@ -250,7 +250,7 @@ export const TimelineTab: React.FC = () => {
                         type="button"
                         className={`w-4 h-4 rounded border flex items-center justify-center mt-0.5 transition-colors shrink-0 ${
                           item.done
-                            ? 'bg-[#2383E2] border-[#2383E2] text-white'
+                            ? 'bg-[#FF5B26] border-[#FF5B26] text-white'
                             : 'border-[#787774]/50 dark:border-[#787774] hover:border-[#37352F]'
                         }`}
                       >
@@ -384,7 +384,7 @@ export const TimelineTab: React.FC = () => {
                   placeholder="e.g. Schedule venue walkthrough"
                   value={newTaskTitle}
                   onChange={(e) => setNewTaskTitle(e.target.value)}
-                  className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs sm:text-sm text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+                  className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs sm:text-sm text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
                 />
               </div>
 
@@ -397,7 +397,7 @@ export const TimelineTab: React.FC = () => {
                     type="text"
                     value={newTaskCategory}
                     onChange={(e) => setNewTaskCategory(e.target.value)}
-                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
                   />
                 </div>
                 <div>
@@ -410,7 +410,7 @@ export const TimelineTab: React.FC = () => {
                     max="52"
                     value={newTaskWeeks}
                     onChange={(e) => setNewTaskWeeks(parseInt(e.target.value, 10) || 0)}
-                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden font-mono"
+                    className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden font-mono"
                   />
                 </div>
               </div>
@@ -425,7 +425,7 @@ export const TimelineTab: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white text-xs font-medium shadow-2xs"
+                  className="px-4 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white text-xs font-medium shadow-2xs"
                 >
                   Save Task
                 </button>

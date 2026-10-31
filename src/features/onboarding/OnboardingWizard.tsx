@@ -35,6 +35,7 @@ import { usePlanStore } from '../../store/usePlanStore';
 import { SkeletonLoader } from '../../components/SkeletonLoader';
 import { EventPlanSchema, EventPlan } from '../../lib/schema';
 import { Logo } from '../../components/Logo';
+import { PartyIllustration } from '../../components/PartyIllustration';
 
 function createPlanFromInputs(onboarding: any): EventPlan {
   const city = onboarding.city?.trim() || 'Jaipur';
@@ -377,86 +378,69 @@ export const OnboardingWizard: React.FC = () => {
     onboarding.guestCount > 0 ? Math.round(onboarding.totalBudget / onboarding.guestCount) : 0;
 
   return (
-    <div className="w-full min-h-screen bg-[#FAF9F6] dark:bg-[#07080B] text-[#18181B] dark:text-[#EDEDED] transition-colors relative overflow-hidden">
-      {/* Subtle Starry / Ambient Cosmic Background Gradient in Dark Mode */}
-      <div className="absolute inset-0 pointer-events-none opacity-0 dark:opacity-100 transition-opacity duration-700 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,40,10,0.15),rgba(255,255,255,0))]" />
-      <div className="absolute inset-0 pointer-events-none opacity-100 dark:opacity-0 transition-opacity duration-700 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,91,38,0.06),rgba(255,255,255,0))]" />
+    <div className="w-full min-h-screen bg-[#F7F5F0] dark:bg-[#07080B] text-[#18181B] dark:text-[#EDEDED] transition-colors relative overflow-hidden">
+      <section className="relative z-10 px-4 pt-12 pb-10 sm:px-6 sm:pt-16 sm:pb-14">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
+          <div className="text-center md:text-left">
+            <a href="#features" className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-[#26231F] bg-[#DDF3E8] px-3.5 py-1.5 text-xs font-bold text-[#26231F] shadow-[2px_2px_0_#26231F] transition-transform hover:-translate-y-0.5">
+              <span className="h-2 w-2 rounded-full bg-[#7654A8]" />
+              A little help for your next big day
+            </a>
 
-      {/* ------------------------------------------------------------------ */}
-      {/* 1. HERO SECTION (Exact Vetra Design from Reference Image)           */}
-      {/* ------------------------------------------------------------------ */}
-      <section className="relative pt-12 sm:pt-16 pb-16 px-4 text-center z-10">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
-          {/* Top Announcement Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 backdrop-blur-md shadow-xs mb-8 transition-transform hover:scale-[1.02] cursor-pointer">
-            <span className="text-xs font-medium text-neutral-700 dark:text-neutral-300">
-              New version is out! Read more
-            </span>
-            <span className="w-5 h-5 rounded-full bg-[#FF5B26] text-white flex items-center justify-center text-[10px] font-bold">
-              →
-            </span>
+            <h1 className="mx-auto max-w-2xl text-5xl font-black leading-[0.98] tracking-[-0.065em] text-neutral-900 dark:text-white sm:text-6xl md:mx-0 md:text-7xl">
+              Let’s make it
+              <span className="font-handwritten mt-1 block rotate-[-2deg] text-6xl font-bold tracking-[-0.04em] text-[#7654A8] sm:text-7xl md:text-8xl">
+                memorable.
+              </span>
+            </h1>
+
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-neutral-600 dark:text-neutral-300 sm:text-lg md:mx-0">
+              From the first guest list to the last dance, make a plan that feels like you—and actually feels doable.
+            </p>
+
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+              <button
+                type="button"
+                onClick={scrollToPlanner}
+                className="playful-cta inline-flex items-center justify-center px-6 py-3 text-sm"
+              >
+                Let’s plan something
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIsDemoModalOpen(true)}
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-[#26231F] bg-white px-5 py-3 text-sm font-bold text-neutral-900 shadow-[3px_3px_0_#26231F] transition-all hover:-translate-y-0.5 hover:shadow-[5px_5px_0_#26231F] dark:bg-[#202020] dark:text-white"
+              >
+                <Play className="h-4 w-4 fill-current" />
+                Take a peek
+              </button>
+            </div>
+
+            <p className="font-handwritten mt-5 text-2xl text-neutral-600 dark:text-neutral-300">
+              no clipboard required ✳
+            </p>
           </div>
 
-          {/* Monumental Headline */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.08] max-w-3xl">
-            Accelerate Your Events With AI
-          </h1>
-
-          {/* Subtitle */}
-          <p className="mt-5 text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed font-normal">
-            AI-driven event architecture & insights. Empower your team, book top venues, and orchestrate memorable celebrations effortlessly.
-          </p>
-
-          {/* Action Pill Buttons Pair */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
-            <button
-              type="button"
-              onClick={() => setIsDemoModalOpen(true)}
-              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 text-neutral-900 dark:text-white font-medium text-xs sm:text-sm backdrop-blur-md transition-all active:scale-98 cursor-pointer shadow-xs"
-            >
-              <div className="w-5 h-5 rounded-full bg-white dark:bg-white text-black flex items-center justify-center shadow-xs">
-                <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
-              </div>
-              <span>Watch Demo</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={scrollToPlanner}
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#FF5B26] hover:bg-[#EA4B18] text-white font-semibold text-xs sm:text-sm shadow-[0_10px_25px_rgba(255,91,38,0.35)] transition-all active:scale-98 cursor-pointer"
-            >
-              Get started for free
-            </button>
+          <div className="relative mx-auto w-full max-w-[440px] rotate-[1deg] rounded-[2rem] border-2 border-[#26231F] bg-[#FFF1D6] p-3 shadow-[7px_7px_0_#26231F]">
+            <PartyIllustration />
+            <div className="font-handwritten absolute -bottom-4 -left-3 rotate-[-8deg] rounded-xl border-2 border-[#26231F] bg-[#DDF3E8] px-4 py-1 text-2xl text-[#26231F] shadow-[3px_3px_0_#26231F]">
+              made for your kind of party
+            </div>
           </div>
         </div>
       </section>
 
       {/* ------------------------------------------------------------------ */}
-      {/* 2. PLANETARY GLOWING ARC ("ECLIPSE HORIZON") & SOCIAL PROOF        */}
-      {/* ------------------------------------------------------------------ */}
-      <div className="relative w-full overflow-hidden pt-8 pb-4">
-        {/* The Glowing Curved Horizon Arc */}
-        <div className="relative max-w-6xl mx-auto px-4">
-          {/* Radial light flare centered on the curve */}
-          <div className="absolute left-1/2 -top-12 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-b from-[#FF5B26]/30 dark:from-[#FF5B26]/45 via-[#FF5B26]/10 to-transparent blur-3xl pointer-events-none rounded-[100%]" />
-
-          {/* The Curved Arc Outline */}
-          <div className="relative w-full h-20 sm:h-28 overflow-hidden flex items-end justify-center">
-            <div className="w-[180%] sm:w-[130%] h-[500px] rounded-[50%] border-t-2 border-[#FF5B26]/70 dark:border-[#FF5B26] shadow-[0_-15px_50px_rgba(255,91,38,0.35)] dark:shadow-[0_-25px_70px_rgba(255,91,38,0.55)] bg-gradient-to-b from-black/5 dark:from-[#0B0C10] to-[#FAF9F6] dark:to-[#07080B]" />
-          </div>
-        </div>
-      </div>
-
-      {/* ------------------------------------------------------------------ */}
-      {/* 3. PEEKING FUTURISTIC STUDIO DASHBOARD (Exact Vetra Frame)         */}
+      {/* 3. EVENT PLANNING STUDIO */}
       {/* ------------------------------------------------------------------ */}
       <section id="planner" className="relative max-w-6xl mx-auto px-4 sm:px-6 pb-24 z-20 scroll-mt-20">
-        <div className="rounded-3xl border border-black/10 dark:border-white/10 bg-white/95 dark:bg-[#0E1015] shadow-2xl shadow-orange-500/5 dark:shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden transition-all backdrop-blur-xl">
+        <div className="overflow-hidden rounded-[1.75rem] border-2 border-[#26231F] bg-white shadow-[8px_8px_0_#26231F] transition-all dark:border-[#E9E2D6] dark:bg-[#0E1015] dark:shadow-[8px_8px_0_#E9E2D6]">
           {/* Top Bar inside the Vetra Frame */}
-          <div className="px-5 py-3.5 border-b border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-4 border-b-2 border-[#26231F] bg-[#F4EFFF] px-5 py-3.5 dark:border-[#E9E2D6] dark:bg-white/[0.02]">
             <div className="flex items-center gap-3">
-              {/* Vetra-style Slash Logo icon */}
-              <div className="w-7 h-7 rounded-lg bg-[#FF5B26] flex items-center justify-center text-white shadow-xs">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg border-2 border-[#26231F] bg-[#FFD84D] text-[#26231F] shadow-[2px_2px_0_#26231F]">
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M4 6h10l-2 4H2z" />
                   <path d="M10 14h10l-2 4H8z" />
@@ -488,7 +472,7 @@ export const OnboardingWizard: React.FC = () => {
               >
                 <Bell className="w-4 h-4" />
               </button>
-              <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-orange-500 to-amber-500 text-white font-bold text-xs flex items-center justify-center shadow-xs">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#26231F] bg-[#DDF3E8] text-xs font-bold text-[#26231F] shadow-[2px_2px_0_#26231F]">
                 JD
               </div>
             </div>
@@ -497,7 +481,7 @@ export const OnboardingWizard: React.FC = () => {
           {/* Main Dashboard Layout: Sidebar + Architect Workspace */}
           <div className="flex flex-col lg:flex-row">
             {/* Left Sidebar (Desktop) */}
-            <div className="w-full lg:w-56 p-4 border-b lg:border-b-0 lg:border-r border-black/5 dark:border-white/5 bg-black/[0.01] dark:bg-white/[0.01] flex lg:flex-col justify-between gap-4">
+            <div className="flex w-full justify-between gap-4 border-b-2 border-[#26231F] bg-[#FFF9E8] p-4 dark:border-[#E9E2D6] dark:bg-white/[0.01] lg:w-56 lg:flex-col lg:border-b-0 lg:border-r">
               <div className="space-y-1 w-full flex lg:flex-col gap-1 overflow-x-auto no-scrollbar">
                 <button
                   type="button"
@@ -1289,7 +1273,7 @@ export const OnboardingWizard: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-6 rounded-3xl bg-white dark:bg-[#0E1015] border border-black/10 dark:border-white/10 shadow-xl space-y-4">
+          <div className="paper-card p-6 rounded-3xl bg-white dark:bg-[#0E1015] border border-black/10 dark:border-white/10 shadow-xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-black/5 dark:border-white/5">
               <span className="text-xs font-bold text-neutral-900 dark:text-white">Budget Allocation Simulation</span>
               <span className="font-mono text-xs font-bold text-[#FF5B26]">100% Balanced</span>
@@ -1402,7 +1386,7 @@ export const OnboardingWizard: React.FC = () => {
             </button>
           </div>
 
-          <div className="p-6 rounded-3xl bg-white dark:bg-[#0E1015] border-2 border-[#FF5B26] shadow-xl relative space-y-4">
+          <div className="paper-card p-6 rounded-3xl bg-white dark:bg-[#0E1015] border-2 border-[#FF5B26] relative space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-sm font-bold text-neutral-900 dark:text-white">Professional Studio</span>
               <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#FF5B26] text-white font-bold">Most Popular</span>
@@ -1434,15 +1418,13 @@ export const OnboardingWizard: React.FC = () => {
       {/* 6. BOTTOM CTA HORIZON MONOLITH                                     */}
       {/* ------------------------------------------------------------------ */}
       <section id="contact" className="py-16 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-[#14151B] to-[#07080B] border border-white/10 p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-8">
-          <div className="absolute -top-24 -left-24 w-80 h-80 bg-[#FF5B26]/20 blur-[100px] pointer-events-none rounded-full" />
-          
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-8 overflow-hidden rounded-[2rem] border-2 border-[#26231F] bg-[#DDF3E8] p-8 text-center text-[#26231F] shadow-[7px_7px_0_#26231F] sm:flex-row sm:p-14 sm:text-left">
           <div className="relative z-10 max-w-xl">
-            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight">
+            <h2 className="text-2xl font-black tracking-tight sm:text-4xl">
               Ready to orchestrate your next unforgettable event?
             </h2>
-            <p className="mt-2 text-xs sm:text-sm text-neutral-400">
-              Join thousands of creators turning ideas into polished, coordinated celebrations.
+            <p className="mt-2 text-sm text-neutral-700">
+              A good plan leaves room for the best bits to happen.
             </p>
           </div>
 
@@ -1450,14 +1432,14 @@ export const OnboardingWizard: React.FC = () => {
             <button
               type="button"
               onClick={scrollToPlanner}
-              className="px-6 py-3 rounded-full bg-[#FF5B26] hover:bg-[#EA4B18] text-white font-semibold text-xs sm:text-sm shadow-lg shadow-orange-500/30 active:scale-98 transition-all cursor-pointer whitespace-nowrap"
+              className="playful-cta whitespace-nowrap px-6 py-3 text-sm"
             >
-              Get started for free
+              Let’s make a plan
             </button>
             <button
               type="button"
               onClick={loadDemoPlan}
-              className="px-5 py-3 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium text-xs sm:text-sm backdrop-blur-md transition-all cursor-pointer whitespace-nowrap"
+              className="whitespace-nowrap rounded-xl border-2 border-[#26231F] bg-white px-5 py-3 text-sm font-bold text-[#26231F] shadow-[3px_3px_0_#26231F] transition-all hover:-translate-y-0.5 hover:shadow-[5px_5px_0_#26231F]"
             >
               Load Demo Plan
             </button>

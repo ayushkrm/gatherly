@@ -29,7 +29,7 @@ export const PrintableSummary: React.FC<PrintableSummaryProps> = ({ isOpen, onCl
           <div className="flex items-center gap-1.5">
             <button
               onClick={() => window.print()}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white text-xs font-medium transition-colors shadow-2xs"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white text-xs font-medium transition-colors shadow-2xs"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print Document</span>
@@ -119,7 +119,7 @@ export const PrintableSummary: React.FC<PrintableSummaryProps> = ({ isOpen, onCl
               {plan.timeline.map((item, idx) => (
                 <div key={idx} className="p-2.5 rounded-md border border-[#E9E9E7] bg-[#FFFFFF] flex items-start gap-2">
                   <span className={`w-3.5 h-3.5 rounded border flex items-center justify-center shrink-0 mt-0.5 text-[10px] ${
-                    item.done ? 'bg-[#2383E2] border-[#2383E2] text-white' : 'border-[#E9E9E7]'
+                    item.done ? 'bg-[#FF5B26] border-[#FF5B26] text-white' : 'border-[#E9E9E7]'
                   }`}>
                     {item.done && '✓'}
                   </span>

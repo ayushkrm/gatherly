@@ -143,7 +143,7 @@ export const IdeasTab: React.FC = () => {
       {/* Toast Notification */}
       {toastMessage && (
         <div className="p-3 rounded-md bg-[#DBEDDB] dark:bg-[#243D30] border border-[#86C19F] dark:border-[#335643] text-[#1C3829] dark:text-[#86C19F] text-xs flex items-center gap-2">
-          <Sparkles className="w-3.5 h-3.5 text-[#2383E2] shrink-0" />
+          <Sparkles className="w-3.5 h-3.5 text-[#FF5B26] shrink-0" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -180,7 +180,7 @@ export const IdeasTab: React.FC = () => {
                   ) : (
                     <button
                       onClick={() => addIdeaToPlan(idKey)}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white text-xs font-medium transition-colors shadow-2xs active:scale-98"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white text-xs font-medium transition-colors shadow-2xs active:scale-98"
                     >
                       <Plus className="w-3 h-3" />
                       <span>Add to Plan</span>
@@ -217,7 +217,7 @@ export const IdeasTab: React.FC = () => {
                   className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#F7F6F3] dark:bg-[#252525] border border-[#E9E9E7] dark:border-[#2E2E2E] hover:bg-[#EFEFED] dark:hover:bg-[#2C2C2C] text-[#37352F] dark:text-[#D4D4D4] text-xs font-medium transition-colors disabled:opacity-50"
                   title="Replace with a fresh creative concept"
                 >
-                  <RefreshCw className={`w-3.5 h-3.5 text-[#2383E2] ${isRegenLoading ? 'animate-spin' : ''}`} />
+                  <RefreshCw className={`w-3.5 h-3.5 text-[#FF5B26] ${isRegenLoading ? 'animate-spin' : ''}`} />
                   <span>{isRegenLoading ? 'Generating...' : 'Regenerate'}</span>
                 </button>
               </div>

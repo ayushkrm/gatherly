@@ -32,7 +32,7 @@ export const HeroCountdown: React.FC<HeroCountdownProps> = ({ onOpenPlanB }) => 
   const overallReadiness = Math.round(taskProgress * 0.6 + vendorProgress * 0.4);
 
   return (
-    <div className="relative rounded-lg bg-[#F7F6F3] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] p-6 sm:p-8 transition-colors">
+    <div className="paper-card relative rounded-lg bg-[#F4EFFF] p-6 transition-colors dark:bg-[#202020] sm:p-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Left: Event Title & Tone */}
         <div className="lg:col-span-7 space-y-3">
@@ -55,7 +55,7 @@ export const HeroCountdown: React.FC<HeroCountdownProps> = ({ onOpenPlanB }) => 
           <div className="flex flex-wrap items-center gap-2 pt-2">
             <button
               onClick={() => setIsChatOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white font-medium text-xs sm:text-sm transition-colors shadow-2xs active:scale-98"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white font-medium text-xs sm:text-sm transition-colors shadow-2xs active:scale-98"
             >
               <MessageSquareText className="w-3.5 h-3.5" />
               <span>Planning Assistant</span>
@@ -110,7 +110,7 @@ export const HeroCountdown: React.FC<HeroCountdownProps> = ({ onOpenPlanB }) => 
                   d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 />
                 <path
-                  className="text-[#2383E2] transition-all duration-700 ease-out"
+                  className="text-[#FF5B26] transition-all duration-700 ease-out"
                   strokeDasharray={`${overallReadiness}, 100`}
                   strokeLinecap="round"
                   strokeWidth="3"
@@ -125,7 +125,7 @@ export const HeroCountdown: React.FC<HeroCountdownProps> = ({ onOpenPlanB }) => 
               </div>
             </div>
             <div className="mt-1 text-[11px] text-[#787774] flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-[#2383E2]" />
+              <CheckCircle2 className="w-3 h-3 text-[#FF5B26]" />
               <span>{completedTasks}/{totalTasks} tasks</span>
             </div>
           </div>

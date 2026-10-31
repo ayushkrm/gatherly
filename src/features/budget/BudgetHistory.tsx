@@ -137,7 +137,7 @@ export const BudgetHistory: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E9E9E7] dark:border-[#2E2E2E]">
         <div className="space-y-0.5">
           <div className="flex items-center gap-2">
-            <History className="w-4 h-4 text-[#2383E2]" />
+            <History className="w-4 h-4 text-[#FF5B26]" />
             <h3 className="text-base sm:text-lg font-serif font-bold text-[#37352F] dark:text-[#D4D4D4]">
               Budget History & Evolution
             </h3>
@@ -184,7 +184,7 @@ export const BudgetHistory: React.FC = () => {
             <span className="text-[10px] font-semibold uppercase tracking-wider text-[#787774] block">
               Current Actual Spend
             </span>
-            <div className="text-sm font-bold font-mono text-[#2383E2]">
+            <div className="text-sm font-bold font-mono text-[#FF5B26]">
               {formatCurrency(evolutionStats.currentActual, onboarding.currency)}
             </div>
             <span className="text-[10px] text-[#787774]">
@@ -200,7 +200,7 @@ export const BudgetHistory: React.FC = () => {
             </span>
             <div className="text-sm font-bold font-mono text-[#37352F] dark:text-[#D4D4D4] flex items-center gap-1.5">
               <span>{evolutionStats.rebalanceCount}</span>
-              <Sparkles className="w-3 h-3 text-[#2383E2]" />
+              <Sparkles className="w-3 h-3 text-[#FF5B26]" />
             </div>
             <span className="text-[10px] text-[#787774]">Automated normalizations</span>
           </div>
@@ -238,7 +238,7 @@ export const BudgetHistory: React.FC = () => {
                 onClick={() => setFilterType(item.id as any)}
                 className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
                   active
-                    ? 'bg-[#2383E2] text-white font-semibold shadow-2xs'
+                    ? 'bg-[#FF5B26] text-white font-semibold shadow-2xs'
                     : 'bg-[#F7F6F3] dark:bg-[#252525] text-[#787774] hover:bg-[#EFEFED] dark:hover:bg-[#2C2C2C] hover:text-[#37352F]'
                 }`}
               >
@@ -286,7 +286,7 @@ export const BudgetHistory: React.FC = () => {
                 {/* Timeline Node Dot */}
                 <span
                   className={`absolute -left-[23px] sm:-left-[31px] top-5 w-3 h-3 rounded-full border-2 border-[#FFFFFF] dark:border-[#202020] ${
-                    isLatest ? 'bg-[#2383E2] ring-2 ring-[#2383E2]/20' : 'bg-[#787774]'
+                    isLatest ? 'bg-[#FF5B26] ring-2 ring-[#FF5B26]/20' : 'bg-[#787774]'
                   }`}
                 />
 
@@ -297,7 +297,7 @@ export const BudgetHistory: React.FC = () => {
                     <span className="font-mono text-xs font-bold text-[#37352F] dark:text-[#D4D4D4]">
                       v{versionNumber}
                       {isLatest && (
-                        <span className="ml-1 text-[10px] font-sans font-medium text-[#2383E2] bg-[#D3E5EF] dark:bg-[#1C2E3D] px-1.5 py-0.2 rounded">
+                        <span className="ml-1 text-[10px] font-sans font-medium text-[#FF5B26] bg-[#D3E5EF] dark:bg-[#1C2E3D] px-1.5 py-0.2 rounded">
                           Active
                         </span>
                       )}
@@ -330,7 +330,7 @@ export const BudgetHistory: React.FC = () => {
                     </div>
                     <div>
                       <span>Actual: </span>
-                      <strong className="text-[#2383E2] font-mono">
+                      <strong className="text-[#FF5B26] font-mono">
                         {formatCurrency(entry.totalActual, onboarding.currency)}
                       </strong>
                     </div>
@@ -357,13 +357,13 @@ export const BudgetHistory: React.FC = () => {
                           <span className="font-sans font-medium">{d.category}:</span>
                           <span>{formatFieldValue(d.field, d.oldValue)}</span>
                           <ArrowRight className="w-2.5 h-2.5 text-[#787774]" />
-                          <span className="text-[#2383E2] font-semibold">{formatFieldValue(d.field, d.newValue)}</span>
+                          <span className="text-[#FF5B26] font-semibold">{formatFieldValue(d.field, d.newValue)}</span>
                         </span>
                       ))}
                       {entry.diffs.length > 3 && (
                         <button
                           onClick={() => setExpandedDiffId(entry.id)}
-                          className="text-[11px] text-[#2383E2] font-medium hover:underline self-center"
+                          className="text-[11px] text-[#FF5B26] font-medium hover:underline self-center"
                         >
                           +{entry.diffs.length - 3} more
                         </button>
@@ -411,7 +411,7 @@ export const BudgetHistory: React.FC = () => {
                                 </td>
                                 <td className="py-2 px-3 text-right font-mono font-medium">
                                   {isNumeric ? (
-                                    <span className={isPositive ? 'text-[#2383E2]' : 'text-[#27AE60]'}>
+                                    <span className={isPositive ? 'text-[#FF5B26]' : 'text-[#27AE60]'}>
                                       {isPositive ? '+' : ''}
                                       {formatFieldValue(d.field, numDiff)}
                                     </span>
@@ -460,7 +460,7 @@ export const BudgetHistory: React.FC = () => {
                               <td className="py-2 px-3 text-right font-mono font-medium text-[#37352F] dark:text-[#D4D4D4]">
                                 {formatCurrency(cat.amount, onboarding.currency)}
                               </td>
-                              <td className="py-2 px-3 text-right font-mono text-[#2383E2]">
+                              <td className="py-2 px-3 text-right font-mono text-[#FF5B26]">
                                 {formatCurrency(cat.actualSpent || 0, onboarding.currency)}
                               </td>
                             </tr>
@@ -479,7 +479,7 @@ export const BudgetHistory: React.FC = () => {
                         onClick={() => setExpandedDiffId(isDiffExpanded ? null : entry.id)}
                         aria-expanded={isDiffExpanded}
                         aria-label={isDiffExpanded ? `Hide diffs for revision v${versionNumber}` : `View ${entry.diffs.length} diffs for revision v${versionNumber}`}
-                        className="inline-flex items-center gap-1 text-xs text-[#787774] hover:text-[#37352F] dark:hover:text-white font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#2383E2] rounded px-1"
+                        className="inline-flex items-center gap-1 text-xs text-[#787774] hover:text-[#37352F] dark:hover:text-white font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF5B26] rounded px-1"
                       >
                         {isDiffExpanded ? (
                           <>
@@ -499,7 +499,7 @@ export const BudgetHistory: React.FC = () => {
                       onClick={() => setExpandedSnapshotId(isSnapshotExpanded ? null : entry.id)}
                       aria-expanded={isSnapshotExpanded}
                       aria-label={isSnapshotExpanded ? `Hide snapshot for revision v${versionNumber}` : `View full snapshot table for revision v${versionNumber}`}
-                      className="inline-flex items-center gap-1 text-xs text-[#787774] hover:text-[#37352F] dark:hover:text-white font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#2383E2] rounded px-1"
+                      className="inline-flex items-center gap-1 text-xs text-[#787774] hover:text-[#37352F] dark:hover:text-white font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF5B26] rounded px-1"
                     >
                       {isSnapshotExpanded ? (
                         <>
@@ -520,10 +520,10 @@ export const BudgetHistory: React.FC = () => {
                     <button
                       onClick={() => handleRestore(entry.id)}
                       aria-label={`Restore budget to revision v${versionNumber}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-[#37352F] dark:text-[#D4D4D4] hover:bg-[#EFEFED] dark:hover:bg-[#2C2C2C] hover:border-[#2383E2] transition-colors active:scale-98 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#2383E2]"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-[#37352F] dark:text-[#D4D4D4] hover:bg-[#EFEFED] dark:hover:bg-[#2C2C2C] hover:border-[#FF5B26] transition-colors active:scale-98 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#FF5B26]"
                       title="Restore the active budget to this revision"
                     >
-                      <RotateCcw className="w-3.5 h-3.5 text-[#2383E2]" />
+                      <RotateCcw className="w-3.5 h-3.5 text-[#FF5B26]" />
                       <span>Restore This Version</span>
                     </button>
                   )}

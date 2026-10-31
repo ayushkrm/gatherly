@@ -16,7 +16,7 @@ export const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
         <div className="flex flex-col items-center">
           {/* Animated Spinner with LogoMark */}
           <div className="relative mb-5">
-            <div className="w-12 h-12 rounded-full border-2 border-[#E9E9E7] dark:border-[#2E2E2E] border-t-[#2383E2] animate-spin" />
+            <div className="w-12 h-12 rounded-full border-2 border-[#E9E9E7] dark:border-[#2E2E2E] border-t-[#FF5B26] animate-spin" />
             <div className="absolute inset-0 flex items-center justify-center">
               <LogoMark size={20} />
             </div>

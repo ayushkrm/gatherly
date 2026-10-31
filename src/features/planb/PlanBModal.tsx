@@ -104,7 +104,7 @@ export const PlanBModal: React.FC<PlanBModalProps> = ({ isOpen, onClose }) => {
                 : 'text-[#787774] hover:text-[#37352F]'
             }`}
           >
-            <CloudRain className="w-3.5 h-3.5 text-[#2383E2]" />
+            <CloudRain className="w-3.5 h-3.5 text-[#FF5B26]" />
             <span className="hidden sm:inline">Weather Crisis</span>
             <span className="sm:hidden">Weather</span>
           </button>
@@ -139,7 +139,7 @@ export const PlanBModal: React.FC<PlanBModalProps> = ({ isOpen, onClose }) => {
         {/* Loading Spinner */}
         {isLoading && (
           <div className="py-10 text-center space-y-2">
-            <div className="w-8 h-8 rounded-full border-2 border-[#E9E9E7] border-t-[#2383E2] animate-spin mx-auto" />
+            <div className="w-8 h-8 rounded-full border-2 border-[#E9E9E7] border-t-[#FF5B26] animate-spin mx-auto" />
             <p className="text-xs text-[#787774]">
               Generating contingency strategies with senior event planner AI...
             </p>
@@ -197,7 +197,7 @@ export const PlanBModal: React.FC<PlanBModalProps> = ({ isOpen, onClose }) => {
                 <ul className="space-y-1 text-xs text-[#787774]">
                   {current.alternativeOptions.map((opt, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#2383E2]">•</span>
+                      <span className="text-[#FF5B26]">•</span>
                       <span>{opt}</span>
                     </li>
                   ))}
@@ -233,7 +233,7 @@ export const PlanBModal: React.FC<PlanBModalProps> = ({ isOpen, onClose }) => {
                 className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-medium transition-colors shadow-2xs ${
                   adoptedScenarios[activeScenario]
                     ? 'bg-[#DBEDDB] dark:bg-[#243D30] text-[#1C3829] dark:text-[#86C19F] cursor-default'
-                    : 'bg-[#2383E2] hover:bg-[#0B6FCC] text-white active:scale-98'
+                    : 'bg-[#FF5B26] hover:bg-[#EA4B18] text-white active:scale-98'
                 }`}
               >
                 {adoptedScenarios[activeScenario] ? (

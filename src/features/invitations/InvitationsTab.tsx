@@ -110,7 +110,7 @@ export const InvitationsTab: React.FC = () => {
 
           <button
             onClick={handlePrint}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white text-xs font-medium transition-colors shadow-2xs active:scale-98"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white text-xs font-medium transition-colors shadow-2xs active:scale-98"
           >
             <Printer className="w-3.5 h-3.5" />
             <span>Print Invitation</span>
@@ -130,7 +130,7 @@ export const InvitationsTab: React.FC = () => {
             <select
               value={selectedLanguage}
               onChange={(e) => setSelectedLanguage(e.target.value as any)}
-              className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs sm:text-sm text-[#37352F] dark:text-white font-medium focus:border-[#2383E2] focus:outline-hidden"
+              className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs sm:text-sm text-[#37352F] dark:text-white font-medium focus:border-[#FF5B26] focus:outline-hidden"
             >
               <option value="English">English</option>
               <option value="Hindi">Hindi (हिन्दी)</option>
@@ -150,7 +150,7 @@ export const InvitationsTab: React.FC = () => {
               placeholder="e.g. Hosted by the Sharma & Patel Families"
               value={customHosts}
               onChange={(e) => setCustomHosts(e.target.value)}
-              className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs sm:text-sm text-[#37352F] dark:text-white focus:border-[#2383E2] focus:outline-hidden"
+              className="w-full px-3 py-1.5 rounded-md border border-[#E9E9E7] dark:border-[#2E2E2E] bg-[#FFFFFF] dark:bg-[#191919] text-xs sm:text-sm text-[#37352F] dark:text-white focus:border-[#FF5B26] focus:outline-hidden"
             />
           </div>
 
@@ -159,7 +159,7 @@ export const InvitationsTab: React.FC = () => {
             <button
               onClick={handleGenerateInvitations}
               disabled={isGenerating}
-              className="w-full inline-flex items-center justify-center gap-2 py-2 px-4 rounded-md bg-[#2383E2] hover:bg-[#0B6FCC] text-white font-medium text-xs sm:text-sm shadow-2xs transition-colors disabled:opacity-50"
+              className="w-full inline-flex items-center justify-center gap-2 py-2 px-4 rounded-md bg-[#FF5B26] hover:bg-[#EA4B18] text-white font-medium text-xs sm:text-sm shadow-2xs transition-colors disabled:opacity-50"
             >
               <Sparkles className={`w-3.5 h-3.5 ${isGenerating ? 'animate-spin' : ''}`} />
               <span>{isGenerating ? 'Generating...' : `Generate in ${selectedLanguage}`}</span>
@@ -182,7 +182,7 @@ export const InvitationsTab: React.FC = () => {
               onClick={() => setSelectedTone(t.id as any)}
               className={`px-2.5 py-1 rounded text-xs font-medium transition-colors ${
                 selectedTone === t.id
-                  ? 'bg-[#2383E2] text-white font-semibold'
+                  ? 'bg-[#FF5B26] text-white font-semibold'
                   : 'bg-[#F7F6F3] dark:bg-[#252525] text-[#787774] hover:bg-[#EFEFED] dark:hover:bg-[#2C2C2C]'
               }`}
             >
@@ -196,7 +196,7 @@ export const InvitationsTab: React.FC = () => {
       <div className="flex justify-center">
         <div className="w-full max-w-2xl bg-[#FFFFFF] dark:bg-[#202020] border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-lg p-6 sm:p-10 shadow-2xs relative text-center printable-invitation">
           <div className="border border-[#E9E9E7] dark:border-[#2E2E2E] rounded-md p-6 sm:p-8 space-y-5 bg-[#FBFBFA] dark:bg-[#191919]">
-            <span className="inline-block text-[11px] uppercase tracking-wider text-[#2383E2] font-semibold">
+            <span className="inline-block text-[11px] uppercase tracking-wider text-[#FF5B26] font-semibold">
               {selectedLanguage} • {selectedTone.toUpperCase()}
             </span>
 
